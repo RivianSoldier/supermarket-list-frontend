@@ -1,7 +1,7 @@
 import "./index.css";
 import { useEffect, useState } from "react";
 import { getList } from "../../services/requests";
-import { ListCard } from "../../components";
+import { ListRender, Loader, Button } from "../../components";
 
 export const ListScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -9,7 +9,7 @@ export const ListScreen = () => {
   const loadListItems = async () => {
     setLoading(true);
     const result = await getList();
-    console.log(result)
+    console.log(result);
     setListData(result);
     setLoading(false);
   };
@@ -22,23 +22,20 @@ export const ListScreen = () => {
     <div className="list-screen-container">
       <div className="list-screen-content-container">
         <div className="list-screen-header">
-          <img
-            className="logo-image"
-            src="/images/logo.png"
-            alt="Supermarket list logo"
-          />
-          <h1>Lista Supermercado</h1>
+          <div className="list-screen-title-container">
+            <img
+              className="logo-image"
+              src="/images/logo.png"
+              alt="Supermarket list logo"
+            />
+            <h1 className="list-screen-header-title">Lista Supermercado</h1>
+          </div>
+          <div className="list-screen-header-button">
+            <Button>Adicionar</Button>
+          </div>
         </div>
         <div className="list-screen-list-container">
-          {loading && <h3>Carregando...</h3>}
-          {!loading && listData?.length > 0 ? (
-            listData.map((item) => <ListCard key={item._id} item={item} />)
-          ) : (
-            <h3>
-              Sua lista está vazia, adicione um novo item clicando no botão de
-              adicionar
-            </h3>
-          )}
+          {loading ? <Loader /> : <ListRender list={listData} />}
         </div>
       </div>
     </div>
