@@ -56,3 +56,28 @@
   justify-content: space-between;
   margin-top: 54vh;
 }
+
+@media screen and (max-device-width: 830px) {
+  .modal-content {
+    width: 60vw;
+    height: 100vh;
+  }
+
+  .buttons-container {
+    height: 12vh;
+    margin-top: 72vh;
+  }
+}
+
+@media screen and (max-device-width: 420px) {
+  .modal-content {
+    width: 100vw;
+  }
+
+  .buttons-container {
+    align-items: center;
+    height: 18vh;
+    margin-top: 48vh;
+  }
+}
+

@@ -45,3 +45,13 @@ h3 {
   margin: 0;
   font-family: "Avenir Next";
 }
+
+@media screen and (max-device-width: 420px) {
+  h1 {
+    font-size: 18px;
+  }
+  
+  h3 {
+    font-size: 12px;
+  }
+}
