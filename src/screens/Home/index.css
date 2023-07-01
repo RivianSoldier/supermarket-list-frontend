@@ -45,11 +45,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 452px;
+  width: 90%;
   margin-top: 24px;
 }
 
-@media screen and (max-device-width: 420px) {
+@media screen and (max-width: 420px) {
   .home-screen-content-container {
     max-width: 320px;
     height: 600px;
@@ -57,7 +57,6 @@
   }
 
   .home-screen-button-container {
-    max-width: 300px;
     margin-top: 8px;
   }
 
@@ -79,7 +78,7 @@
   }
 }
 
-@media screen and (max-device-width: 830px) {
+@media screen and (max-width: 830px) {
   .home-screen-container {
     overflow: hidden;
   }
