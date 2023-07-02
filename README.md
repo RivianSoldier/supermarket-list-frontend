@@ -3,7 +3,7 @@
 This is an application built using React.js, to make it easier to make a supermarket list.
 
 <p>
-  <img height="500" src="https://github.com/RivianSoldier/supermarket-list-frontend/blob/master/public/images/demo.png"/>
+  <img height="450" src="https://github.com/RivianSoldier/supermarket-list-frontend/blob/master/public/images/demo.png"/>
 </p>
 
 ## Link to Production App:
