@@ -27,13 +27,12 @@
   margin-left: 6px;
   font-size: 16px;
   margin-bottom: 6px;
-  font-family: "Avenir Next";
+  font-family: 'Avenir Next';
 }
 
 .input:focus {
   outline: none;
 }
-
 
 @media screen and (max-width: 420px) {
   .input-container {

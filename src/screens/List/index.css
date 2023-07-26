@@ -21,7 +21,6 @@
   overflow: hidden;
 }
 
-
 .list-screen-header {
   display: flex;
   flex-direction: row;
@@ -83,4 +82,3 @@
     width: 42px;
   }
 }
-
