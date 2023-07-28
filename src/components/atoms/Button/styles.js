@@ -11,7 +11,6 @@ export const ButtonContainer = styled.button`
   font-family: 'Avenir next';
   border-radius: 24px;
   cursor: pointer;
-  margin-bottom: 20px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme, outline }) =>
     outline ? theme.colors.light : theme.colors.primary};

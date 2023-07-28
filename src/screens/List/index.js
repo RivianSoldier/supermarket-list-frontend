@@ -1,7 +1,15 @@
-import './index.css'
 import { useEffect, useState } from 'react'
 import { getList, updateItem } from 'services/requests'
 import { ListRender, Loader, Button, Modal, Title } from 'components'
+import {
+  ScreenContainer,
+  ScreenContentContainer,
+  ScreenHeader,
+  ScreenTitleContainer,
+  LogoImage,
+  HeaderButton,
+  ListContainer
+} from './styles'
 
 export const ListScreen = () => {
   const [modalVisible, setModalVisible] = useState(false)
@@ -48,26 +56,22 @@ export const ListScreen = () => {
   }
 
   return (
-    <div className="list-screen-container">
-      <div className="list-screen-content-container">
-        <div className="list-screen-header">
-          <div className="list-screen-title-container">
-            <img
-              className="logo-image"
-              src="/images/logo.png"
-              alt="Supermarket list logo"
-            />
+    <ScreenContainer>
+      <ScreenContentContainer>
+        <ScreenHeader>
+          <ScreenTitleContainer>
+            <LogoImage />
             <Title fontSize={32} lineHeight={32} ml={12}>
               Lista Supermercado
             </Title>
-          </div>
-          <div className="list-screen-header-button">
+          </ScreenTitleContainer>
+          <HeaderButton>
             <Button onClick={onClickAddButton}>
               {window.innerWidth <= 420 ? '+' : 'Adicionar'}
             </Button>
-          </div>
-        </div>
-        <div className="list-screen-list-container">
+          </HeaderButton>
+        </ScreenHeader>
+        <ListContainer>
           {loading ? (
             <Loader />
           ) : (
@@ -77,9 +81,9 @@ export const ListScreen = () => {
               list={listData}
             />
           )}
-        </div>
-      </div>
+        </ListContainer>
+      </ScreenContentContainer>
       {modalVisible && <Modal item={selectedItem} onClose={onCloseModal} />}
-    </div>
+    </ScreenContainer>
   )
 }

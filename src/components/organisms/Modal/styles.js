@@ -1,4 +1,7 @@
-.modal {
+import { styled } from 'styled-components'
+import closeSvg from '../Modal/close.svg'
+
+export const ModalBackground = styled.div`
   top: 0;
   left: 0;
   bottom: 0;
@@ -9,10 +12,9 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
+  background-color: ${({ theme }) => theme.colors.darkTransparent};
+`
+export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -21,62 +23,52 @@
   align-items: center;
   padding: 12px 16px;
   box-sizing: border-box;
-}
 
-.modal-header {
+  @media (max-width: 830px) {
+    width: 60vw;
+    height: 100vh;
+  }
+
+  @media (max-width: 420px) {
+    width: 100vw;
+  }
+`
+
+export const ModalHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 24px;
-}
-
-.modal-header h1 {
-  margin: 0;
-}
-
-.modal-close-button {
+`
+export const ModalCloseButton = styled.button`
   height: 24px;
   width: 24px;
   background-color: transparent;
   border: 0;
-  background-image: url(../../../public/images/close.svg);
+  background-image: url(${closeSvg});
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
-}
-
-.buttons-container {
+`
+export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 20vh;
   width: 100%;
   justify-content: space-between;
   margin-top: 54vh;
-}
 
-@media screen and (max-width: 830px) {
-  .modal-content {
-    width: 60vw;
-    height: 100vh;
-  }
-
-  .buttons-container {
+  @media (max-width: 830px) {
     height: 12vh;
     margin-top: 72vh;
   }
-}
 
-@media screen and (max-width: 420px) {
-  .modal-content {
-    width: 100vw;
-  }
-
-  .buttons-container {
+  @media (max-width: 420px) {
     align-items: center;
     height: 18vh;
     margin-top: 48vh;
   }
-}
+`
